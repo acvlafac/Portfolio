@@ -6,5 +6,4 @@ export default defineConfig({
   site: "https://acvlafac.github.io/Portfolio/",
   base: "/Portfolio/",
   integrations: [tailwind(), robotsTxt()],
-  outDir: "./docs",
 });
