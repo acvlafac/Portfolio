@@ -1,0 +1,145 @@
+---
+const DIPLOMAS = [
+  {
+    title: "Curso de fundamentos Biomedicos",
+    summary:
+      "Fundamentos Biomedicos Para la atencion Farmacéutica en el Ámbito Hospitalario",
+    image: `${import.meta.env.BASE_URL}diplomas/diploma1.jpeg`,
+  },
+  {
+    title: "Licenciado en Quimica y Farmacia Biologica",
+    summary:
+      "Licenciado en Química y Farmacia Biológica por la Universidad Nacional De El Salvador.",
+    image: `${import.meta.env.BASE_URL}diplomas/diploma2.jpeg`,
+  },
+  {
+    title: "Curso de formacion Pedagogica para profesionales",
+    summary:
+      "Curso de Formación Pedagógica para Profesionales Universitarios por la Universidad Pedagogica del El Salvador",
+    image: `${import.meta.env.BASE_URL}diplomas/diploma3.jpeg`,
+  },
+  {
+    title: "Farmacia Clinica",
+    summary: "Diplomado en Farmacia Clínica por la Universidad de El Salvador",
+    image: `${import.meta.env.BASE_URL}diplomas/diploma4.jpeg`,
+  },
+  {
+    title: "Politica Farmaceutica y uso adecudado de medicamentos",
+    summary:
+      "Curso de politicas Farmaceuticas por Organización Panamericana de la Salud (OPS)",
+    image: `${import.meta.env.BASE_URL}diplomas/diploma5.jpeg`,
+  },
+  {
+    title:
+      "Simposio Centroamericano de Farmaceuticos Hospitalarios El salvador",
+    summary:
+      "Asistencia al Simposio Centroamericano de Farmaceuticos Hospitalarios realizado en El Salvador 2012",
+    image: `${import.meta.env.BASE_URL}diplomas/diploma6.jpeg`,
+  },
+  {
+    title: "I Congreso Nacional de Atencion Farmaceutica",
+    summary:
+      "Asistencia al I Congreso Nacional de Atencion Farmaceutica realizado en El Salvador 2014",
+    image: `${import.meta.env.BASE_URL}diplomas/diploma7.jpeg`,
+  },
+  {
+    title:
+      "Taller de motivacion y calidad de los servicios, mejorando la cadena de suministros",
+    summary: "Participacion en taller por el ministerio de salud y USAID",
+    image: `${import.meta.env.BASE_URL}diplomas/diploma8.jpeg`,
+  },
+  {
+    title: "Diplomado en Farmacia Hospitalaria",
+    summary:
+      "Diplomado en Farmacia Hospitalaria por la Universidad de El Salvador",
+    image: `${import.meta.env.BASE_URL}diplomas/diploma10.jpeg`,
+  },
+  {
+    title: "Pasantia de especializacion en preparacion de Citostaticos",
+    summary:
+      "Diplomado en preparacion de Citostaticos por la Universidad de El Salvador",
+    image: `${import.meta.env.BASE_URL}diplomas/diploma11.jpeg`,
+  },
+  {
+    title: "Taller de lenguaje de señas",
+    summary: "Participacion en taller de lenguaje de señas LESSA",
+    image: `${import.meta.env.BASE_URL}diplomas/diplomado12.jpeg`,
+  },
+  {
+    title: "Curso basico de derechos humanos",
+    summary:
+      "Curso basico de derechos humanos por la escuela de derechos humanos",
+    image: `${import.meta.env.BASE_URL}diplomas/diplomado13.jpeg`,
+  },
+];
+---
+
+<div class="relative">
+  <div class="overflow-hidden rounded-xl">
+    <div
+      class="diplomas-slider flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory p-4"
+    >
+      {
+        DIPLOMAS.map((d) => (
+          <figure class="snap-start flex-shrink-0 w-[min(80vw,520px)] relative rounded-lg overflow-hidden shadow-lg">
+            <img
+              src={d.image}
+              alt={d.title}
+              class="w-full h-64 object-cover"
+              loading="lazy"
+            />
+            <figcaption class="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-black/60 to-black/0">
+              <h3 class="text-white text-lg font-semibold">{d.title}</h3>
+              <p class="text-white text-sm opacity-90">{d.summary}</p>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="mt-3 flex justify-center gap-3">
+    <button
+      id="diplomas-prev"
+      class="px-3 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800"
+      >◀</button
+    >
+    <button
+      id="diplomas-next"
+      class="px-3 py-2 rounded-full bg-neutral-200 dark:bg-neutral-800"
+      >▶</button
+    >
+  </div>
+
+  <style is:global>
+    .diplomas-slider::-webkit-scrollbar {
+      display: none;
+    }
+    .diplomas-slider {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("astro:page-load", initDiplomas);
+    document.addEventListener("DOMContentLoaded", initDiplomas);
+
+    function initDiplomas() {
+      const slider = document.querySelector(".diplomas-slider");
+      const prev = document.getElementById("diplomas-prev");
+      const next = document.getElementById("diplomas-next");
+      if (!slider) return;
+
+      const step = () => slider.clientWidth * 0.8;
+
+      prev?.addEventListener("click", () => {
+        slider.scrollBy({ left: -step(), behavior: "smooth" });
+      });
+
+      next?.addEventListener("click", () => {
+        slider.scrollBy({ left: step(), behavior: "smooth" });
+      });
+    }
+  </script>
+</div>

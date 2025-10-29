@@ -1,15 +1,16 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
-import TitleSection from "@/components/TitleSection.astro"
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import ActivitiesIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import Diplomas from "@/components/Diplomas.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import TitleSection from "@/components/TitleSection.astro";
 ---
 
 <Layout
@@ -18,11 +19,10 @@ import TitleSection from "@/components/TitleSection.astro"
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+      <Hero />
     </SectionContainer>
-    <div class="space-y-24">
+  </main>
+  <div class="space-y-24">
     <SectionContainer id="experiencia">
       <TitleSection>
         <Briefcase class="size-8" />
@@ -33,10 +33,18 @@ import TitleSection from "@/components/TitleSection.astro"
 
     <SectionContainer id="proyectos">
       <TitleSection>
-        <CodeIcon class="size-7" />
-        Proyectos
+        <ActivitiesIcon class="size-7" />
+        Otras Actividades
       </TitleSection>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="diplomados">
+      <TitleSection>
+        <ActivitiesIcon class="size-7" />
+        Diplomados
+      </TitleSection>
+      <Diplomas />
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">
@@ -47,5 +55,4 @@ import TitleSection from "@/components/TitleSection.astro"
       <AboutMe />
     </SectionContainer>
   </div>
-  </main>
 </Layout>
