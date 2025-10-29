@@ -27,6 +27,16 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Prevent Jekyll processing
+        run: |
+          if [ -d "./dist" ]; then
+            # create .nojekyll so GitHub Pages does not try to run Jekyll on the output
+            touch ./dist/.nojekyll
+          else
+            echo "dist directory not found"
+            exit 1
+          fi
+
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v4
         with:
