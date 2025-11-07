@@ -1,0 +1,36 @@
+---
+const personalImageAlt = "Héctor Antonio Cañas Velasquez";
+---
+
+<article
+  class="flex flex-col items-center justify-center gap-8 text-neutral-600 dark:text-neutral-300 md:flex-row"
+>
+  <div
+    class="[&>p]:mb-4 [&>p>strong]:text-primary-600 dark:[&>p>strong]:text-primary-400 [&>p>strong]:font-semibold text-pretty order-2 md:order-1"
+  >
+    <p>
+      Soy Héctor Antonio Cañas Velasquez, Licenciado en Química y Farmacia y
+      Profesor en Ciencias Naturales. Con más de 25 años de experiencia en el
+      sector salud, he desarrollado mi carrera profesional
+      <strong>en farmacia hospitalaria y gestión farmacéutica</strong> en importantes
+      instituciones de salud de El Salvador.
+    </p>
+
+    <p>
+      Entre mis logros destacan <strong
+        >la dirección de servicios de farmacia en hospitales nacionales</strong
+      >, la elaboración de manuales de procedimientos, y la asesoría
+      universitaria en trabajos de graduación especializados en citostáticos y
+      nutrición parenteral.
+    </p>
+  </div>
+
+  <img
+    width="200"
+    height="200"
+    src={`${import.meta.env.BASE_URL}antonio.jpeg`}
+    alt={personalImageAlt}
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-primary-50/50 dark:bg-primary-900/20 ring-2 ring-primary-200 dark:ring-primary-800"
+    style="object-position: 50% 50%"
+  />
+</article>

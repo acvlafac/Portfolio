@@ -1,0 +1,70 @@
+---
+const personalImageAlt = "Héctor Antonio Cañas Velasquez";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
+---
+
+<div class="max-w-4xl mx-auto">
+  <div class="flex flex-col lg:flex-row items-center gap-8 mb-8">
+    <div class="flex-shrink-0">
+      <div class="relative">
+        <img
+          class="rounded-full shadow-2xl size-24 lg:size-32 ring-4 ring-primary-200 dark:ring-primary-800"
+          src={`${import.meta.env.BASE_URL}avatar.jpg`}
+          alt={personalImageAlt}
+        />
+        <div
+          class="absolute -bottom-2 -right-2 bg-primary-500 text-white rounded-full px-3 py-1 text-sm font-semibold shadow-lg"
+        >
+          Disponible
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-1 text-center lg:text-left">
+      <h1
+        class="text-5xl lg:text-6xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 mb-4"
+      >
+        Hola, soy <span class="text-primary-600 dark:text-primary-400"
+          >Héctor Antonio</span
+        >
+      </h1>
+      <p
+        class="text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed"
+      >
+        <span class="font-semibold text-primary-600 dark:text-primary-400"
+          >+25 años de experiencia</span
+        > como
+        <strong class="text-primary-700 dark:text-primary-300"
+          >Licenciado en Química y Farmacia</strong
+        > y
+        <strong class="text-primary-700 dark:text-primary-300"
+          >Profesor en Ciencias Naturales</strong
+        >
+      </p>
+      <p class="text-lg text-neutral-500 dark:text-neutral-400 mb-8">
+        Especializado en farmacia hospitalaria, gestión farmacéutica y docencia
+        universitaria.
+      </p>
+
+      <nav class="flex flex-wrap justify-center lg:justify-start gap-4">
+        <SocialPill
+          href="mailto:acvlafac@yahoo.es"
+          class="bg-primary-500 hover:bg-primary-600 text-white"
+        >
+          <MailIcon class="size-4" />
+          Contáctame
+        </SocialPill>
+        <SocialPill
+          href="#contacto"
+          class="bg-accent-500 hover:bg-accent-600 text-white"
+        >
+          <LinkedInIcon class="size-4" />
+          Contacto
+        </SocialPill>
+      </nav>
+    </div>
+  </div>
+</div>

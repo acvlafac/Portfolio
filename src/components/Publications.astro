@@ -1,0 +1,36 @@
+---
+const PUBLICATIONS = [
+  {
+    title: 'Evaluación de protocolos para la preparación segura de citostáticos',
+    journal: 'Revista Hospitalaria de Farmacia',
+    year: 2019,
+    link: '#',
+    summary: 'Estudio descriptivo sobre la implementación de guías para la preparación y manejo seguro de citostáticos en servicios oncológicos hospitalarios.',
+  },
+  {
+    title: 'Notificación de eventos adversos y farmacovigilancia en hospitales públicos',
+    journal: 'Salud & Farmacia',
+    year: 2021,
+    link: '#',
+    summary: 'Análisis de la mejora en los reportes de farmacovigilancia tras la capacitación del personal de farmacia y enfermería.',
+  },
+]
+---
+
+<section class="space-y-4">
+  <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-100">Publicaciones y trabajos</h2>
+  <p class="text-neutral-600 dark:text-neutral-400">Artículos, guías técnicas y trabajos relevantes relacionados con farmacia hospitalaria y farmacovigilancia.</p>
+
+  <ul class="mt-4 space-y-4">
+    {PUBLICATIONS.map((p) => (
+      <li class="p-4 rounded-lg border border-primary-200 dark:border-primary-800 bg-white dark:bg-transparent shadow-sm">
+        <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100">{p.title} <span class="text-sm font-medium text-neutral-500">({p.year})</span></h3>
+        <div class="text-sm text-neutral-600 dark:text-neutral-400">{p.journal}</div>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-400">{p.summary}</p>
+        <div class="mt-3">
+          <a href={p.link} class="text-primary-600 hover:underline">Ver / Descargar</a>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
